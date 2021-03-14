@@ -1,0 +1,166 @@
+/* Comments */
+/* @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Poppins:300,400,500,700"); */
+
+/* Responsiveness Media Query */
+
+/* For a screen < 1200px, this CSS will be read */
+@media (max-width: 1200px) {
+  .container {
+    width: 1000px;
+    margin: 50px auto
+  }
+}
+
+/* For a screen < 992px, this CSS will be read */
+@media (max-width: 992px) {
+  .container {
+    width: 700px;
+    margin: 50px auto
+  }
+}
+
+/* For a screen < 768px, this CSS will be read */
+@media (max-width: 768px) {
+  .container {
+    width: 500px;
+    margin: 50px auto
+  }
+}
+
+/* For a screen < 576px, this CSS will be read */
+@media (max-width: 576px) {
+  .container {
+    width: 300px;
+    margin: 50px auto
+  }
+}
+
+/* Tags */
+
+body {
+  background-color: #F7F9FC;
+  color: #575F7D;
+  font-family: 'Lora', serif;
+  font-size: 17px;
+  font-weight: lighter;
+  line-height: 25px;
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    line-height: 32px;
+}
+
+h1 {
+  color: red;
+  font-size: 32px;
+  font-weight: 1000;
+}
+
+h2 {
+  color: rgb(50, 50, 50);
+  font-family: arial;
+}
+
+p {
+  display: block;
+  margin: 17px 0px 40px;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  color: #6B72E1;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+a:hover {
+  color: rgb(209, 209, 209);
+}
+
+i {
+  font-size: 25px;
+}
+
+ul.list-inline {
+  list-style: none;
+  margin: 17px 0px;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+}
+
+/* Classes */
+
+.banner {
+  background-image: url(https://source.unsplash.com/random/1000x500);
+  background-size: cover;
+  color: red;
+  padding: 120px 0;
+}
+
+/*.container {
+  width: 500px;
+  margin: 0 auto;
+}*/
+
+.card {
+  width: 400px;
+  background-color: white;
+  padding: 40px;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  margin: 20px 0px;
+  text-align: center;
+}
+
+.list-inline li {
+  display: inline;
+  padding: 10px;
+}
+
+.link-medium {
+  background-image: linear-gradient(to bottom, rgba(233, 253, 240, 1), rgba(233, 253, 240, 1));
+  color: #636363;
+  font-weight: lighter;
+  font-size: 25px;
+  font-style: italic;
+}
+
+.link-medium:hover {
+  cursor: pointer;
+}
+
+.fab {
+  color: red;
+  font-size: 25px;
+}
+
+.fab:hover {
+  font-size: 40px;
+}
+
+/* IDs */
+
+#btn-red {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  background-color: red;
+  color: #FFFFFF;
+  padding: 15px 20px;
+}
+
+#pic-profile {
+  border-radius: 100px;
+}
+
+
