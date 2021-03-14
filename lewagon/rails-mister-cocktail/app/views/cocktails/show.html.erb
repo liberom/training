@@ -1,0 +1,42 @@
+<%= render 'shared/navbar' %>
+<h1><%= @cocktail.name %></h1>
+<% if @cocktail.photo.nil? %>
+  <%= image_tag "https://source.unsplash.com/featured/?cocktails", alt: "Drink", class: 'card-img-top' %>
+<% else %>
+  <%= cl_image_tag(@cocktail.photo, width: 300, height: 200, crop: :fill) %>
+<% end %>
+
+<div class="d-flex">
+  <div class="recipe-box">
+    <ul>
+      <% ingr_name = '' %>
+      <% dose_descr = '' %>
+      <% dose_id = 0 %>
+      <% recipe = {} %>
+      <% @cocktail.ingredients.zip(@cocktail.doses) do |ingredient, dose| %>
+        <% ingr_name = ingredient.name %>
+        <% dose_descr = dose.description %>
+        <% dose_obj = dose %>
+        <% recipe[ingr_name] = dose_obj %>
+      <% end %>
+
+      <% recipe.each_pair do |ingr, dose| %>
+        <li id="recipe-list">
+          <%= link_to dose_path(dose.id), method: 'delete', class: 'trash-icon', data: { confirm: "Are you sure?" } do %>
+              <i class="far fa-trash-alt"></i>
+          <% end %>
+          <%= "#{ingr}: #{dose.description}" %>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="button-box">
+    <%= link_to 'Add new dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-secondary' %>
+  </div>
+</div>
+<div class="rating-box">
+
+</div>
+
+
+<%= link_to 'Back to cocktails', cocktails_path, class: 'btn btn-primary', id: 'back-button' %>

@@ -1,0 +1,22 @@
+<h1 class="py-5">New Game: The Longest Word</h1>
+<div class="letters d-flex justify-content-center">
+  <% @letters.each do |letter| %>
+    <div class="box"><%= letter %></div>
+  <% end %>
+</div>
+<div class="question py-5">
+  <h3>What is the longest word you can find?</h2>
+</div>
+ <div class="form-group container">
+  <form action="/score" method="post" class="d-flex justify-content-center">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input type="text" name="answer" class="form-control">
+    <input type="hidden" name="start_time" value="<%= @start_time %>">
+    <input type="hidden" name="letters" value="<%= @letters %>">
+    <input type="submit" value="Play" class="btn btn-primary" id="button">
+  </form>
+ </div>
+<footer>
+  <p>Find me in app/views/games/new.html.erb</p>
+</footer>
+

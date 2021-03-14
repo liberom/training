@@ -1,0 +1,30 @@
+<%= render 'shared/banner' %>
+<!-- <h1>Cocktails' Lounge</h1> -->
+
+<div class="container py-5">
+
+  <div class="cards row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-sm-6 col-md-3">
+        <div class="card-category" style="width: 18rem;">
+          <% if !cocktail.photo.nil? %>
+            <%= cl_image_tag(cocktail.photo, width: 300, height: 200, crop: :fill) %>
+          <% else %>
+            <%= image_tag "https://source.unsplash.com/featured/?cocktails", alt: "Drink", class: 'card-img-top' %>
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to cocktail.name, cocktail_path(cocktail)  %></h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+
+
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1286&q=80)">
+</div>

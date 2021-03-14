@@ -1,0 +1,8 @@
+<div class="container">
+  <%= simple_form_for [@cocktail, @rating] do |f| %>
+  <%#= f.association :cocktail %>
+  <%= f.select :rating, [0, 1, 2, 3, 4, 5], class: 'btn dropdown-menu', include_blank: true %>
+  <%= f.input :description %>
+  <%= f.button :submit, class: 'btn btn-success' %>
+<% end %>
+</div>

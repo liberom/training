@@ -1,0 +1,50 @@
+<!--  NAVBAR  -->
+
+<!-- Navbar in 'shared/_navbar.html.erb' -->
+
+<!-- BANNER SEM FOTO -->
+
+<div class="banner-product" style="background-image: linear-gradient(rgba(0,0,0,0.0),rgba(0,0,0,0.0)), url();">
+  <div class="container">
+    <div class="rowpt-4 d-flex justify-content-center">
+      <div class="d-flex flex-row bd-highlight mb-3">
+        <div class=" ml-5  bd-highlight mr-5">
+          <h1><strong>Confira </strong><strong>todos os </strong><strong>produtos:</strong></h1>
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CARDS DOS PRODUTOS -->
+
+<div class="row-products pt-4 d-flex justify-content-center">
+<% @products.each do |product| %>
+  <div class="card-trip m-3 col-md-3 p-3">
+    <div>
+      <%= link_to product_path(product) do %>
+        <%= cl_image_tag(product.photo, width: '100%', height: 200) %>
+      <% end %>
+
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= link_to product.name, product_path(product) %></h2>
+          <p class='pt-2'><%= product.description%></p>
+        </div>
+
+        <h2 class="card-trip-pricing"><%= number_to_currency(product.price, unit: "R$ ", separator: ",", delimiter: ".", precision: 2) %></h2>
+
+        <% if product.user %>
+          <!-- ADAPTAR IF-STATEMENT PARA STRING DA FOTO DO USUARIO -->
+          <!-- Cortar e colar a linha de baixo no else -->
+          <%= image_tag "no-profile.png", class: 'card-trip-user avatar-bordered' %>
+        <% else %>
+          <!-- INSIRA AQUI A IMAGE-TAG NO-PROFILE -->
+        <% end %>
+    </div>
+    </div>
+  </div>
+<% end %>
+</div>

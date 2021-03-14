@@ -1,0 +1,14 @@
+// .row {
+//   align-items: center;
+//   margin-left: 170px;
+//   margin-right: 10px;
+// }
+
+.row-products {
+  position: relative;
+  align-items: center;
+    margin-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 10px;
+}

@@ -1,0 +1,71 @@
+.productView-title {
+    color: black;
+    font-size: 1.00rem;
+    font-weight: 500;
+    opacity: 0.5;
+    margin-top: 20px;
+    margin-left: 200px;
+}
+
+.productView-reservar {
+    color: orange;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+    text-transform: uppercase;
+    margin-top: 25px;
+    opacity: 1;
+}
+
+.position-photo {
+  justify-content: center;
+}
+.photoclass {
+  border-radius: 10px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+
+.color-form {
+  background-color: gray;
+}
+
+.content-box-color {
+  background-color: #eeeeee;
+  border-radius: 10px;
+}
+
+.title-maior {
+  color: black;
+  opacity: 0.5;
+  font-size: 3.25rem;
+  font-weight: 500;
+  margin-bottom: .5rem;
+}
+
+.form-ajustes {
+  margin-bottom: 30px;
+}
+
+.bloco-adminstracao {
+
+  height: 300px;
+}
+
+.botoes-alinhamento {
+  align-content: space-between;
+  align: center;
+}
+
+.login-background {
+
+  background-image: url('background_sessions.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.row-tamanho-meusprodutos {
+  margin-top: 40px;
+  height:  450px;
+}

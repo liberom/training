@@ -1,0 +1,82 @@
+<div class="row justify-content-center mb-5">
+<p> </p>
+</div>
+
+<div class="productView">
+  <div class="row p-3 justify-content-center mt-4">
+    <div class="content-box col-md-5 col-sm-12">
+      <div class=" position-photo justify-content-center">
+        <h1 class="title-maior"><%= @product.name %></h1>
+        <%= cl_image_tag(@product.photo, width: 520, height: 400, crop: :thumb, class:"photoclass") %>
+        <i><h2 class="productView-title "><%= @product.category.capitalize %></h2></i>
+        <%= link_to 'Voltar para produtos', products_path, class:"btn btn-primary ml-4" %>
+        <% if current_user.id == @product.user_id %>
+        <%= link_to 'Editar Produto', edit_product_path(@product.id), class:"btn btn-warning" %>
+        <%= link_to 'Apagar Produto', product_path(@product.id),
+            method: :delete,
+            data: { confirm: "Você tem certeza que deseja apagar esse produto?" }, class:'btn btn-danger' %></h3>
+    <% else %>
+    <% end %>
+      </div>
+    </div>
+
+      <% if current_user.id != @product.user_id %>
+      <div class="content-box-color col-md-4 col-sm-12 mb-5">
+
+        <h3 class="productView-reservar">Agendar Produto</h3>
+          <%= render 'bookings/form', product: @product, booking: @booking %>
+      </div>
+      <% end %>
+  </div>
+</div>
+  <div class="bookings-display editar-bookins">
+    <div class="row justify-content-center mt-4">
+      <div class="content-box col-md-5 col-sm-12">
+        <h2>Reservado no(s) período(s):</h2>
+        <p>Confira as datas indisponíveis desse produto pois já estará reservado!</p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>De:</th>
+              <th>Até</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @product.bookings.each do |booking| %>
+              <tr>
+                <td><%= booking.b_date %></td>
+                <td><%= booking.e_date %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <-- Tabs / Guias -->
+  <div class="container my-3">
+  <div class="bloco-adminstracao">
+  <div class="style">
+
+<!-- Hello!!!! -->
+<nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Preço</a>
+    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Descrição</a>
+    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Status</a>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"><%= number_to_currency(@product.price, unit: "R$ ", separator: ",", delimiter: ".", precision: 2) %></div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab"><%= @product.description %></div>
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"><%= @product.status ? 'Disponível' : 'Indisponível' %></div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+
+

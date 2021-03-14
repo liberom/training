@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="content">
+    <h1><%= @restaurant.name %></h1>
+    <h3><%= @restaurant.category.capitalize %> Cousine</h3>
+    <h4><%= @restaurant.phone_number %></h4>
+    <p><%= @restaurant.address %></p>
+  </div>
+  <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Rating</th>
+      <th scope="col">Content</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% count = 1 %>
+    <% @restaurant.reviews.each do |review| %>
+      <tr>
+        <th scope="row"><%= count %></th>
+        <td><%= review.rating %></td>
+        <td><%= review.content %></td>
+        <td><%= link_to 'Delete',  restaurant_path(review), method: 'delete', class: 'btn btn-danger' %></td>
+      </tr>
+      <% count += 1 %>
+    <% end %>
+  </tbody>
+  </table>
+  <%= render '/reviews/new', restaurant: @restaurant, review: @review %>
+</div>
+

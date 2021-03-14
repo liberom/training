@@ -1,0 +1,39 @@
+<h1>Meus produtos</h1>
+
+<div class="container">
+  <div class="row-tamanho-meusprodutos">
+
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Produto</th>
+        <th scope="col">Quantidade</th>
+        <th scope="col">Preço</th>
+        <th scope="col">Descrição</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+          <tr>
+            <td scope="row"><%= link_to product.name, product_path(product) %></td>
+            <td></td>
+            <td><%= number_to_currency(product.price, unit: "R$ ", separator: ",", delimiter: ".", precision: 2) %></td>
+            <td><%= product.description %></td>
+            <td>
+              <% product.bookings.each do |booking| %>
+                <p><%= booking.user.email %></p>
+                <p><%= booking.b_date %></p>
+                <p><%= booking.e_date %></p>
+              <% end %>
+            </td>
+            <td><%=  %></td>
+            <td><%=  %></td>
+          </tr>
+        <% end %>
+    </tbody>
+  </table>
+</div>
+</div>

@@ -1,0 +1,26 @@
+<h1>Tasks</h1>
+
+
+<p>
+  <%= link_to new_path do %>
+    Create new task
+    <%= fa_icon "plus"%>
+  <% end %>
+</p>
+<% @tasks.each do |task| %>
+  <div class="d-flex">
+    <div class="checkbox" style="padding: 5px">
+      <% if task.completed %>
+        <%= fa_icon "check-square" %>
+      <% else %>
+        <%= fa_icon "square" %>
+      <% end %>
+    </div>
+    <div class="post-link" style="padding: 5px">
+      <%= link_to task.title, task_path(task) %>
+    </div>
+  </div>
+<% end %>
+
+<!-- Colocar a checkbox de completed
+Colocar latinha de lixo para deletar -->

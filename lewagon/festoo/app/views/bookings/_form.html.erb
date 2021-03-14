@@ -1,0 +1,11 @@
+<%= simple_form_for [@product, @booking] do |f| %>
+
+  <%= f.label 'Data de Inicio' %>
+  <%= f.input :b_date, as: :string, input_html: { class: 'datepicker' }, label: false %>
+  <%= f.label 'Data de Término' %>
+  <%= f.input :e_date, as: :string, input_html: { class: 'datepicker' }, label: false %>
+  <%= f.label 'Quantidade a ser agendada' %>
+  <%= f.input :sched_qty, label: false %>
+  <%= f.input :address, label: 'Endereço de entrega' %>
+  <%= f.submit 'Agendar', class:"form-ajustes" %>
+<% end %>

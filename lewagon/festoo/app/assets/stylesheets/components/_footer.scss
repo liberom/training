@@ -1,0 +1,75 @@
+/*  @media (max-width: 960px) {
+//   // For a screen < 960px, this CSS will be read
+//   .container {
+//     width: 700px;
+//   }
+}
+@media (max-width: 720px) {
+//   For a screen < 720px, this CSS will be read
+//   .container {
+//     width: 500px;
+//   }
+}
+@media (max-width: 540px) {
+//   For a screen < 540px, this CSS will be read
+//   .container {
+//     width: 300px;
+//   }
+}
+*/
+.footer {
+  background: orange;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  padding: 0px 50px;
+  position: relative;
+  bottom: 0px;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  color: black;
+  opacity: 0.75;
+  font-weight: bold;
+}
+.footer-links a {
+  color: black;
+  opacity: 0.75;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+
+.list-footer {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  margin-bottom: 0px;
+  justify-content: left;
+  font-weight: bold;
+}
+
+.list-footer a {
+  color: black;
+  opacity: 0.75;
+  text-decoration: none;
+  padding: 0px 10px;
+}
+
+.list-footer a:hover {
+  opacity: 1;
+}
+
+.list-copyright {
+  color: black;
+  opacity: 0.75;
+  font-weight: bold;
+  font-size: 12px;
+}

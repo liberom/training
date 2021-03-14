@@ -1,0 +1,19 @@
+<h1>The Longest Word: Score</h1>
+<div class="content">
+  <p class="py-5">Your answer was:<strong> <%= params[:answer] %></strong></p>
+  <div class="d-flex justify-content-center">
+    <% @result.each do |res| %>
+    <div class="box2"><%= res %></div>
+    <% end %>
+  </div>
+</div>
+
+
+
+<div id="play" class="btn btn-primary">
+  <%= link_to 'Play Again', new_path %>
+</div>
+<footer>
+  <p>Find me in app/views/games/score.html.erb</p>
+</footer>
+

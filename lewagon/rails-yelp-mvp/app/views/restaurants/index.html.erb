@@ -1,0 +1,30 @@
+<div class="container">
+  <h1 class="text-center">Restaurants</h1>
+
+  <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Category</th>
+      <th scope="col" class="text-right">Action</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% count = 1 %>
+    <% @restaurants.each do |restaurant| %>
+      <tr>
+        <th scope="row"><%= count %></th>
+        <td><%= restaurant.name %></td>
+        <td><%= restaurant.category.capitalize %></td>
+        <td><%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary"%></td>
+        <td><%= link_to 'Delete',  restaurant_path(restaurant), method: 'delete', class: 'btn btn-danger' %></td>
+      </tr>
+      <% count += 1 %>
+    <% end %>
+  </tbody>
+  </table>
+</div>
+
+

@@ -1,0 +1,10 @@
+<%= simple_form_for(@flat)  do |f| %>
+  <%= f.input :name, label: 'Flat Title', class: 'form-control' %>
+  <%= f.input :address, error: 'Address is mandatory, please specify one', label: 'Address', class: 'form-control' %>
+  <%= f.input :description, placeholder: 'Insert description here...', label: 'Description', class: 'form-control' %>
+  <%= f.input :img_url, inline_label: 'Image URL', class: 'form-control' %>
+  <%= f.input :price_per_night, inline_label: 'Price per night', class: 'form-control' %>
+  <%= f.input :number_of_guests, inline_label: 'Number of guests', class: 'form-control' %>
+
+  <%= f.button :submit %>
+<% end %>

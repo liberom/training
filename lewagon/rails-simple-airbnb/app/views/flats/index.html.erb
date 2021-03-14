@@ -1,0 +1,34 @@
+
+<h1>List of Flats</h1>
+<h4>All of our <%= @flats.count %> flats</h4>
+<i class="fab fa-airbnb"></i>
+<div class="container">
+  <div class="row">
+  <% @flats.each do |flat| %>
+      <div class="col-sm-3">
+        <div class="card">
+          <%= image_tag(flat.img_url, class:"card-img-top") %>
+          <div class="card-body">
+            <h5 class="card-title"><%= flat.name %></h5>
+            <p class="card-text"><%= flat.address %></p>
+            <div class="d-flex justify-content-between">
+              <p><i class="fas fa-users"></i><%= flat.number_of_guests %> </p>
+              <p> $<%= flat.price_per_night %></p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <%= link_to flat_path(flat), class: 'btn btn-primary' do %>
+                <i class="fas fa-info-circle"></i>
+              <% end %>
+              <%= link_to edit_flat_path(flat), class: 'btn btn-warning' do %>
+                <i class="fas fa-pencil-alt"></i>
+              <% end %>
+              <%= link_to flat_path(flat), method: 'delete', class: 'btn btn-danger' do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+  <% end %>
+  </div>
+</div>

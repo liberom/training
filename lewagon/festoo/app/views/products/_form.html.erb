@@ -1,0 +1,30 @@
+<%= simple_form_for(@product) do |f| %>
+  <div class="form-group">
+    <%= f.input :name, label: "Nome", class: 'form-control sm-3 mb-2' %>
+  </div>
+  <div>
+    <%= f.input :description, label: "Descrição", class: 'form-control sm-3 mb-2' %>
+  </div>
+  <div>
+    <%= f.label :category, label: "Categoria"  %>
+    <%= f.select :category, ['festa de aniversário', 'festa infantil', 'festa corporativa'] %>
+  </div>
+  <div>
+    <%= f.input :amount, label: "Quantidade", class: 'form-control sm-3 mb-2' %>
+  </div>
+  <div>
+    <%= f.input :price, label: "Preço" , class: 'form-control sm-3 mb-2' %>
+  </div>
+  <div>
+    <%= f.input :status, as: :radio_buttons, collection: [[true, 'Disponível no momento'], [false, "Indisponivel no momento"]], label_method: :second, value_method: :first %>
+  </div>
+  <div class="photo-upload">
+    <%= f.input :photo, label: "Foto"  %>
+    <%= f.input :photo_cache, as: :hidden %>
+  </div>
+  <div>
+    <%= link_to 'Voltar', products_path, class: 'btn btn-info mp-5'%>
+    <%= f.submit 'Salvar', class: "btn btn-secondary" %>
+  </div>
+<% end %>
+

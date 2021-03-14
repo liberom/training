@@ -1,0 +1,35 @@
+<h1><%= @task.title %></h1>
+
+<p>
+  <%= link_to edit_path(@task) do %>
+    Edit task
+    <%= fa_icon "edit"%>
+  <% end %>
+</p>
+
+<!-- <h2><%= @task.completed %></h2> -->
+<div class="d-flex">
+  <div class="details" style="padding: 5px">
+    <p><%= @task.details %></p>
+  </div>
+  <div class="del-button" style="padding: 5px">
+    <p>
+      <%= link_to destroy_path(@task), method: :delete, data: { confirm: "Are you sure?" } do %>
+        Delete task
+        <%= fa_icon "trash" %>
+      <% end %>
+    </p>
+  </div>
+</div>
+<p>Completed? <%= @task.completed %></p>
+<p>
+  <%= link_to tasks_path do %>
+    Back to tasks
+    <%= fa_icon "arrow-left" %>
+  <% end %>
+</p>
+
+
+
+
+
